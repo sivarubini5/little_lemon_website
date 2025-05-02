@@ -7,6 +7,34 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+    <style>
+    /* Hide the checkbox */
+    #submit-checkbox {
+      display: none;
+    }
+
+    /* Style the submit button */
+    .submit-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Style the message that will show when the form is submitted */
+    .submit-message {
+      display: none;
+      font-size: 18px;
+      margin-top: 20px;
+      color: green;
+    }
+
+    /* Show the message when the checkbox is checked */
+    #submit-checkbox:checked + .submit-button + .submit-message {
+      display: block;
+    }
+  </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -414,5 +442,49 @@
         </div>
       </div>
     </div>
+    <div class="book-table-section pt-5 pb-5" id="bookTableSection">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="book-table-heading">Book a Table</h1>
+        <p class="book-table-description">
+          Reserve a table at our restaurant for an unforgettable dining experience.
+        </p>
+      </div>
+      <div class="col-12 col-md-8 offset-md-2">
+        <form action="#" method="post" class="book-table-form">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="numberOfGuests">Number of Guests</label>
+            <input type="number" class="form-control" id="numberOfGuests" name="numberOfGuests" placeholder="Enter number of guests" required />
+          </div>
+          <div class="form-group">
+            <label for="reservationDate">Reservation Date</label>
+            <input type="date" class="form-control" id="reservationDate" name="reservationDate" required />
+          </div>
+          <div class="form-group">
+            <label for="reservationTime">Reservation Time</label>
+            <input type="time" class="form-control" id="reservationTime" name="reservationTime" required />
+          </div>
+          <div class="form-group">
+            <label for="specialRequests">Special Requests</label>
+            <textarea class="form-control" id="specialRequests" name="specialRequests" rows="3" placeholder="Enter any special requests"></textarea>
+          </div>
+          <input type="checkbox" id="submit-checkbox">
+
+          <!-- Label acting as the submit button -->
+          <label for="submit-checkbox" class="submit-button">Submit</label>
+      
+          <!-- Message that appears after clicking Submit -->
+          <div class="submit-message">Form Submitted Successfully!</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
